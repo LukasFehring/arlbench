@@ -37,6 +37,8 @@ DEFAULT_AUTO_RL_CONFIG = {
     "env_name": "CartPole-v1",
     "env_kwargs": {},
     "eval_env_kwargs": {},
+    "env_params": {},
+    "env_eval_params": {},
     "n_envs": 10,
     "algorithm": "dqn",
     "cnn_policy": False,
@@ -107,6 +109,7 @@ class AutoRLEnv(gymnasium.Env):
             env_kwargs=self._config["env_kwargs"],
             cnn_policy=self._config["cnn_policy"],
             seed=self._seed,
+            env_params=self._config.get("env_params", None)
         )
 
         self._eval_env = make_env(
@@ -116,6 +119,7 @@ class AutoRLEnv(gymnasium.Env):
             env_kwargs=self._config["eval_env_kwargs"],
             cnn_policy=self._config["cnn_policy"],
             seed=self._seed + 1,
+            env_params=self._config.get("env_eval_params", None)
         )
 
         # Checkpointing
