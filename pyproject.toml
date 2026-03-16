@@ -18,7 +18,7 @@ dependencies = [
   "distrax>=0.1.5",
   "flax>=0.8.2",
   "brax>=0.10.3",
-  "pytest>=7.4.4",
+  "pytest>=8.0.0",
   "coverage>=7.4.4",
   "xminigrid>=0.8.0",
   "gymnasium>=1.2.0",
@@ -54,8 +54,8 @@ dev = [
   "mypy>=1.9.0"
 ]
 test = [
-  "pytest>=7.4.4", 
-  "pytest-coverage", 
+  "pytest>=8.0.0", 
+  "pytest-cov>=4.1.0", 
   "pytest-cases>=3.8.5", 
   "ARLBench[examples]"
 ]
@@ -70,18 +70,16 @@ doc = [
 ]
 envpool = ["envpool>=0.8.4"]
 
-
-# https://docs.pytest.org/en/7.2.x/reference/reference.html#ini-options-ref
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-minversion = "7.0"
+minversion = "8.0"
 empty_parameter_set_mark = "xfail"
 log_cli = false
 log_level = "DEBUG"
 xfail_strict = true
+# Note: Ensure you actually want to call --cov here if you use it in CI
 addopts = "--durations=10 -vv"
 markers = ["example: An example"]
-
 
 [tool.coverage.run]
 branch = true
@@ -97,15 +95,12 @@ exclude_lines = [
   "if TYPE_CHECKING",
 ]
 
-# https://github.com/charliermarsh/ruff
 [tool.ruff]
 target-version = "py310"
 line-length = 88
 show-source = true
 src = ["src", "tests", "examples"]
 lint.extend-safe-fixes = ["ALL"]
-
-# Allow unused variables when underscore-prefixed.
 lint.dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 lint.select = [
