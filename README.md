@@ -155,13 +155,13 @@ Just like with RL agents, you can call 'step' multiple times until termination (
 ARLBench is a highlighted benchmark on [AutoML Space](https://automl.space/automl-tools/)! If you use ARLBench in your work, please cite us:
 
 ```bibtex
-@misc{beckdierkes24,
-      title={ARLBench: Flexible and Efficient Benchmarking for Hyperparameter Optimization in Reinforcement Learning}, 
-      author={J. Becktepe and J. Dierkes and C. Benjamins and D. Salinas and A. Mohan and R. Rajan and F. Hutter and H. Hoos and M. Lindauer and T. Eimer},
-      year={2024},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2409.18827},
-      note={GitHub: https://github.com/automl/arlbench}, 
+@article{
+    beckdierkes2026arlbench,
+    title={{ARLB}ench: Flexible and Efficient Benchmarking for Hyperparameter Optimization in Reinforcement Learning},
+    author={Jannis Becktepe and Julian Dierkes and Carolin Benjamins and Aditya Mohan and David Salinas and Raghu Rajan and Frank Hutter and Holger Hoos and Marius Lindauer and Theresa Eimer},
+    journal={Journal of Data-centric Machine Learning Research},
+    year={2026},
+    url={https://openreview.net/forum?id=i6iafxkfFF},
+    note={GitHub: https://github.com/automl/arlbench}
 }
 ```
